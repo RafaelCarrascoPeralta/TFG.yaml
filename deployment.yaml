@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: federacion
-        image: rafacarrascoperalta/federacion:latest
+        image: rafacarrascoperalta/federacion-tfg:latest
         ports:
         - containerPort: 80
         env:
