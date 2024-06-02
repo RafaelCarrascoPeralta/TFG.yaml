@@ -17,7 +17,7 @@ spec:
         command: ["sh", "-c"]
         args:
           - |
-            until mysql -h mysql -u root -p${MYSQL_ROOT_PASSWORD} -e "SELECT 1"; do
+            until mysql -h mysql-service -u root -p${MYSQL_ROOT_PASSWORD} -e "SELECT 1"; do
               echo "Waiting for MySQL to be ready..."
               sleep 2
             done
