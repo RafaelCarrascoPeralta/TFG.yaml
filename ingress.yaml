@@ -4,12 +4,16 @@ metadata:
   name: federacion-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      rewrite ^(/css/.*) $1 break;
+      rewrite ^(/imagen/.*) $1 break;
+      rewrite ^(/.*\.php) $1 break;
 spec:
   rules:
   - host: fabgranadabaloncesto.work.gd
     http:
       paths:
-      - path: /
+      - path: /(.*)
         pathType: Prefix
         backend:
           service:
