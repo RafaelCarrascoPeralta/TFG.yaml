@@ -21,7 +21,7 @@ spec:
               echo "Waiting for MySQL to be ready..."
               sleep 2
             done
-            mysql -h mysql -u root -p${MYSQL_ROOT_PASSWORD} < /scripts/init-db.sql
+            mysql -h mysql-service -u root -p${MYSQL_ROOT_PASSWORD} < /scripts/init-db.sql
         volumeMounts:
         - name: init-db-script
           mountPath: /scripts
