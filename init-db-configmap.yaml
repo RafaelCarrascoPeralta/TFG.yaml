@@ -89,6 +89,12 @@ data:
     ('Jornada 5', 'CB RACA', '2024-06-01', '12:00', 'CB AGUSTINOS', 'COLEGIO RAMON Y CAJAL', '', 14),
     ('Jornada 5', 'CB SANTA FE', '2024-06-01', '19:00', 'CB FUNDACION', 'POLIDEPORTIVO MUNICIPAL DE SANTA FE', '', 15),
     ('Jornada 5', 'CB ALHOTUR', '2024-06-01', '12:30', 'CAB ATARFE', 'PABELLON MUNICIPAL DE ALHOTUR', '', 16);
+    CREATE TABLE `administrador` (
+    `usuario` varchar(20) NOT NULL,
+    `contraseña` varchar(20) NOT NULL
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+    INSERT INTO `administrador` (`usuario`, `contraseña`) VALUES
+    ('admin', 'admin');
     ALTER TABLE `equipos`
       ADD PRIMARY KEY (`nombre_equipo`);
     ALTER TABLE `jugadores`
@@ -99,4 +105,6 @@ data:
       ADD KEY `nombre_equipo` (`nombre_equipo`);
     ALTER TABLE `partidos`
       MODIFY `cod_partido` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+    ALTER TABLE `administrador`
+      ADD PRIMARY KEY (`usuario`);
     COMMIT;
