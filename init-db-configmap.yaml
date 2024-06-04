@@ -94,7 +94,7 @@ data:
     `contraseña` varchar(20) NOT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
     INSERT INTO `administrador` (`usuario`, `contraseña`) VALUES
-    ('admin', 'admin');
+    ('admin', '$2y$10$sq6E/xnyiNZZQOB7J9c1OewSgfz7buJiKi4nNb4eJUHcSj7YRwb76');
     ALTER TABLE `equipos`
       ADD PRIMARY KEY (`nombre_equipo`);
     ALTER TABLE `jugadores`
