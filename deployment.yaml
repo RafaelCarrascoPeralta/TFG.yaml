@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: federacion-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: federacion
