@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: federacion-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      rewrite ^(/css/.*) $1 break;
+      rewrite ^(/imagen/.*) $1 break;
+      rewrite ^(/.*\.php) $1 break;
+spec:
+  tls:
+  - hosts:
+    - fabbaloncestogranada.work.gd
+    secretName: federacion-tls
+  rules:
+  - host: fabbaloncestogranada.work.gd
+    http:
+      paths:
+      - path: /(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: federacion-service
+            port:
+              number: 80
