@@ -8,9 +8,14 @@ metadata:
       rewrite ^(/css/.*) $1 break;
       rewrite ^(/imagen/.*) $1 break;
       rewrite ^(/.*\.php) $1 break;
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
+  tls:
+  - hosts:
+    - www.granadabaloncestofab.work.gd
+    secretName: federacion-tls
   rules:
-  - host: granadabaloncestofab.work.gd
+  - host: www.granadabaloncestofab.work.gd
     http:
       paths:
       - path: /(.*)
