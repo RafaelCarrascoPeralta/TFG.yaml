@@ -9,12 +9,8 @@ metadata:
       rewrite ^(/imagen/.*) $1 break;
       rewrite ^(/.*\.php) $1 break;
 spec:
-  tls:
-  - hosts:
-    - fabbaloncestogranada.work.gd
-    secretName: federacion-tls
   rules:
-  - host: fabbaloncestogranada.work.gd
+  - host: granadabaloncestofab.work.gd
     http:
       paths:
       - path: /(.*)
