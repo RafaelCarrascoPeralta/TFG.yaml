@@ -12,10 +12,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - fabgranadabaloncesto.work.gd
+    - www.granadabaloncestofab.work.gd
     secretName: federacion-tls
   rules:
-  - host: fabgranadabaloncesto.work.gd
+  - host: www.granadabaloncestofab.work.gd
     http:
       paths:
       - path: /(.*)
